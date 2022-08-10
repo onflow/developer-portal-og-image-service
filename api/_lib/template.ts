@@ -92,7 +92,6 @@ function getCss(theme: string, fontSize: string) {
         color: ${foreground};
         line-height: 1.2;
         padding-left:90px;
-        padding-top: 90px;
         max-width: 90%
     }`;
 }
