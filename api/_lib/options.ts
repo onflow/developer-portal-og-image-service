@@ -5,6 +5,8 @@ const exePath = process.platform === 'win32'
 ? '/usr/bin/google-chrome'
 : '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome';
 
+
+
 interface Options {
     args: string[];
     executablePath: string;
@@ -13,6 +15,9 @@ interface Options {
 
 export async function getOptions(isDev: boolean) {
     let options: Options;
+
+    console.log(chrome.headless, isDev)
+
     if (isDev) {
         options = {
             args: [],
@@ -23,7 +28,7 @@ export async function getOptions(isDev: boolean) {
         options = {
             args: chrome.args,
             executablePath: await chrome.executablePath,
-            headless: chrome.headless,
+            headless: true,
         };
     }
     return options;

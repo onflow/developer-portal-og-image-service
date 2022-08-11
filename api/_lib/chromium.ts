@@ -1,3 +1,4 @@
+import chrome from 'chrome-aws-lambda';
 import core from 'puppeteer-core';
 import { getOptions } from './options';
 import { FileType } from './types';
@@ -8,7 +9,7 @@ async function getPage(isDev: boolean) {
         return _page;
     }
     const options = await getOptions(isDev);
-    const browser = await core.launch(options);
+    const browser = await chrome.puppeteer.launch(options);
     _page = await browser.newPage();
     return _page;
 }
