@@ -16,8 +16,6 @@ interface Options {
 export async function getOptions(isDev: boolean) {
     let options: Options;
 
-    console.log(chrome.headless, isDev)
-
     if (isDev) {
         options = {
             args: [],
