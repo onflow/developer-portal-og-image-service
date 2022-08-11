@@ -1,4 +1,9 @@
 {
+  "functions": {
+    "api/**": {
+      "excludeFiles": "{README.md}"
+    }
+  },
   "rewrites": [
     { "source": "/(.+)", "destination": "/api" }
   ]

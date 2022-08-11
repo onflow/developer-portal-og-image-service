@@ -11,11 +11,11 @@ const rglr = readFileSync(`${__dirname}/../_fonts/Termina-Regular.woff2`).toStri
 const bold = readFileSync(`${__dirname}/../_fonts/Termina-Bold.woff2`).toString('base64');
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 
-const bgDark = readFileSync(`${__dirname}/../_bgs/bg-dark.png`).toString('base64');
+// const bgDark = readFileSync(`${__dirname}/../_bgs/bg-dark.png`).toString('base64');
 const bgLight = readFileSync(`${__dirname}/../_bgs/bg-light.png`).toString('base64');
 
 const logoLight = readFileSync(`${__dirname}/../_bgs/logo-light.png`).toString('base64');
-const logoDark = readFileSync(`${__dirname}/../_bgs/logo-dark.png`).toString('base64');
+// const logoDark = readFileSync(`${__dirname}/../_bgs/logo-dark.png`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
     let bg = bgLight;
@@ -24,12 +24,10 @@ function getCss(theme: string, fontSize: string) {
 
     if (theme === 'dark') {
         foreground = 'white';
-        logo = logoDark;
-        bg = bgDark;
+        logo = logoLight;
+        bg = bgLight;
     }
 
-
-    console.log(bgDark ? "Background image was processed..." : "")
 
     return `
     @font-face {
