@@ -11,23 +11,13 @@ const rglr = readFileSync(`${__dirname}/../_fonts/Termina-Regular.woff2`).toStri
 const bold = readFileSync(`${__dirname}/../_fonts/Termina-Bold.woff2`).toString('base64');
 const mono = readFileSync(`${__dirname}/../_fonts/Vera-Mono.woff2`).toString('base64');
 
-// const bgDark = readFileSync(`${__dirname}/../_bgs/bg-dark.png`).toString('base64');
-const bgLight = readFileSync(`${__dirname}/../_bgs/bg-light.png`).toString('base64');
-
-const logoLight = readFileSync(`${__dirname}/../_bgs/logo-light.png`).toString('base64');
-// const logoDark = readFileSync(`${__dirname}/../_bgs/logo-dark.png`).toString('base64');
+const bg = readFileSync(`${__dirname}/../_bgs/bg-dark.png`).toString('base64');
+const logo = readFileSync(`${__dirname}/../_bgs/logo-dark.png`).toString('base64');
 
 function getCss(theme: string, fontSize: string) {
-    let bg = bgLight;
-    let logo = logoLight;
-    let foreground = 'black';
-
-    if (theme === 'dark') {
-        foreground = 'white';
-        logo = logoLight;
-        bg = bgLight;
-    }
-
+    let bg = bg;
+    let logo = logo;
+    let foreground = 'white';
 
     return `
     @font-face {
